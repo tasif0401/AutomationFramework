@@ -11,7 +11,7 @@ public class LoginPage {
     private WebDriverWait wait;
     private By username = By.xpath("//*[@name='username']");
     private By password = By.xpath("//*[@type='password']");
-    private By loginBtn = By.id("loginBtn");
+    private By loginBtn = By.xpath("//*[text()=' Login ']");
 
     public LoginPage(WebDriver driver){ 
         this.driver = driver; 
@@ -32,8 +32,13 @@ public class LoginPage {
         driver.findElement(password).clear(); 
         driver.findElement(password).sendKeys(p); 
     }
+    
+    
 
-    public void clickLogin(){ driver.findElement(loginBtn).click(); }
+    public void clickLogin(){ 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(password));
+		wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
+    	driver.findElement(loginBtn).click(); }
 
     public String getTitle(){ return driver.getTitle(); }
 }

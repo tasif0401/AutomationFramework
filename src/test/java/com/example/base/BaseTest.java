@@ -14,12 +14,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseTest {
-	protected static WebDriver webDriver;
-    protected static AppiumDriver<WebElement> mobileDriver;
+	protected static  WebDriver webDriver;
+	protected static  AppiumDriver<MobileElement> mobileDriver;
 
     
     
