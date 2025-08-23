@@ -6,4 +6,15 @@
       <class name="com.example.testrunner.CucumberTestNGRunner"/>
     </classes>
   </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="com.example.testrunner.CucumberTestNGRunner">
+        <methods>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- com.example.testrunner.CucumberTestNGRunner -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

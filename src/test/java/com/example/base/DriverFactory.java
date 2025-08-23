@@ -10,7 +10,9 @@ public class DriverFactory {
         String path = "src/test/resources/config/" + name;
         try(FileInputStream fis = new FileInputStream(path)){
             prop.load(fis);
-        }
+		} catch (Exception e) {
+			throw new Exception("Failed to load configuration file: " + path, e);
+		}
         return prop;
     }
 }

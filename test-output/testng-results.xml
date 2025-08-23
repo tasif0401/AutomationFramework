@@ -1,43 +1,357 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="3" passed="0" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-17T05:31:40Z" name="Default suite" finished-at="2025-08-17T05:31:49Z" duration-ms="9003">
+  <suite started-at="2025-08-23T09:19:35Z" name="Default suite" finished-at="2025-08-23T09:21:51Z" duration-ms="136197">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@51acdf2e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@1b835480]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-08-17T05:31:40Z" name="Default test" finished-at="2025-08-17T05:31:49Z" duration-ms="9003">
+    <test started-at="2025-08-23T09:19:35Z" name="Default test" finished-at="2025-08-23T09:21:51Z" duration-ms="136197">
       <class name="com.example.testrunner.CucumberTestNGRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@51acdf2e]" started-at="2025-08-17T09:31:40Z" name="setUpClass" finished-at="2025-08-17T09:31:41Z" duration-ms="537" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@1b835480]" started-at="2025-08-23T13:19:35Z" name="setUpClass" finished-at="2025-08-23T13:19:36Z" duration-ms="548" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@759de304]]>
+                <![CDATA[org.testng.TestRunner@6dd20ec9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@51acdf2e]" started-at="2025-08-17T09:31:41Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-17T09:31:49Z" duration-ms="8345" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@1b835480]" started-at="2025-08-23T13:19:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-23T13:20:38Z" duration-ms="62220" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Successful login using credentials"]]>
+                <![CDATA["Mobile login using credentials"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Web Login"]]>
+                <![CDATA["Mobile Login"]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //android.widget.TextView[@text='Login'] (tried for 20 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //android.widget.TextView[@text='Login'] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.example.pages.mobile.MobileLoginPage.clickLogin(MobileLoginPage.java:47)
+	at com.example.stepdefinitions.MobileSteps.I_perform_mobile_login_with(MobileSteps.java:55)
+	at ✽.I perform mobile login with "<password>"(file:///Users/adcbkony/Downloads/AutomationFramework_Full/src/test/resources/features/mobileLogin.feature:6)
+Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'MacbookPro', ip: '2001:8f8:1f18:ccbd:c5af:da37:f593:e8b1%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.6.7', java.version: '21.0.7'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {adbExecTimeout: 120000, appActivity: com.adcb.bankSBX.ADCBMIB, appPackage: com.adcb.bankSBX, autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], databaseEnabled: false, desired: {adbExecTimeout: 120000, appActivity: com.adcb.bankSBX.ADCBMIB, appPackage: com.adcb.bankSBX, autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Pixel 9, enableWebviewDetailsCollection: false, ensureWebviewsHavePages: false, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 16, skipLogcatCapture: true, systemPort: 12032, udid: 46241FDAQ00146, uiautomator2ServerLaunchTimeout: 60000, waitForQuiescence: false}, deviceApiLevel: 36, deviceManufacturer: Google, deviceModel: Pixel 9, deviceName: 46241FDAQ00146, deviceScreenDensity: 420, deviceScreenSize: 1080x2424, deviceUDID: 46241FDAQ00146, enableWebviewDetailsCollection: false, ensureWebviewsHavePages: false, headless: false, javascriptEnabled: true, locationContextEnabled: false, mode: cloud, nativeWebScreenshot: true, networkConnectionEnabled: true, newCommandTimeout: 0, orientation: PORTRAIT, pixelRatio: 2.625, platform: ANDROID, platformName: ANDROID, platformVersion: 16, skipLogcatCapture: true, statBarHeight: 173, systemPort: 12032, takesScreenshot: true, udid: 46241FDAQ00146, uiautomator2ServerLaunchTimeout: 60000, viewportRect: {height: 2251, left: 0, top: 173, width: 1080}, waitForQuiescence: false, warnings: {}, webStorageEnabled: false}
+Session ID: dab0b3f7-6e8f-4952-aa50-80d20819b2c9
+*** Element info: {Using=xpath, value=//android.widget.TextView[@text='Login']}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at com.example.pages.mobile.MobileLoginPage.clickLogin(MobileLoginPage.java:47)
+	at com.example.stepdefinitions.MobileSteps.I_perform_mobile_login_with(MobileSteps.java:55)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@51acdf2e]" started-at="2025-08-17T09:31:49Z" name="tearDownClass" finished-at="2025-08-17T09:31:49Z" duration-ms="28" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@1b835480]" started-at="2025-08-23T13:20:38Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-23T13:21:00Z" duration-ms="21744" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Fund Transfer Exsiting Baneficiary"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Mobile Login"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView' (tried for 20 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView' (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.mib.android.pages.TransfersPage.clickExistingBeneficiarySearchIcon(TransfersPage.java:265)
+	at com.example.stepdefinitions.MobileSteps.user_searches_for_existing_beneficiary_with_name(MobileSteps.java:185)
+	at ✽.user Searches for Existing Beneficiary with Name "<Name>"(file:///Users/adcbkony/Downloads/AutomationFramework_Full/src/test/resources/features/mobileLogin.feature:18)
+Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'MacbookPro', ip: '2001:8f8:1f18:ccbd:c5af:da37:f593:e8b1%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.6.7', java.version: '21.0.7'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {adbExecTimeout: 120000, appActivity: com.adcb.bankSBX.ADCBMIB, appPackage: com.adcb.bankSBX, autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], databaseEnabled: false, desired: {adbExecTimeout: 120000, appActivity: com.adcb.bankSBX.ADCBMIB, appPackage: com.adcb.bankSBX, autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Pixel 9, enableWebviewDetailsCollection: false, ensureWebviewsHavePages: false, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 16, skipLogcatCapture: true, systemPort: 12032, udid: 46241FDAQ00146, uiautomator2ServerLaunchTimeout: 60000, waitForQuiescence: false}, deviceApiLevel: 36, deviceManufacturer: Google, deviceModel: Pixel 9, deviceName: 46241FDAQ00146, deviceScreenDensity: 420, deviceScreenSize: 1080x2424, deviceUDID: 46241FDAQ00146, enableWebviewDetailsCollection: false, ensureWebviewsHavePages: false, headless: false, javascriptEnabled: true, locationContextEnabled: false, mode: cloud, nativeWebScreenshot: true, networkConnectionEnabled: true, newCommandTimeout: 0, orientation: PORTRAIT, pixelRatio: 2.625, platform: ANDROID, platformName: ANDROID, platformVersion: 16, skipLogcatCapture: true, statBarHeight: 173, systemPort: 12032, takesScreenshot: true, udid: 46241FDAQ00146, uiautomator2ServerLaunchTimeout: 60000, viewportRect: {height: 2251, left: 0, top: 173, width: 1080}, waitForQuiescence: false, warnings: {}, webStorageEnabled: false}
+Session ID: dab0b3f7-6e8f-4952-aa50-80d20819b2c9
+*** Element info: {Using=xpath, value=//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at com.mib.android.pages.TransfersPage.clickExistingBeneficiarySearchIcon(TransfersPage.java:265)
+	at com.example.stepdefinitions.MobileSteps.user_searches_for_existing_beneficiary_with_name(MobileSteps.java:185)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@1b835480]" started-at="2025-08-23T13:21:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-23T13:21:51Z" duration-ms="51616" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Account Summmary Dashboard validate Amount is Deductead or not"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Mobile Login"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //android.widget.TextView[@text='ACCOUNT SUMMARY']' (tried for 50 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //android.widget.TextView[@text='ACCOUNT SUMMARY']' (tried for 50 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.mib.android.pages.AccountSummaryPage.getAccountSummaryTitle(AccountSummaryPage.java:37)
+	at com.example.stepdefinitions.MobileSteps.user_navigates_to_account_summary_dashboard(MobileSteps.java:345)
+	at ✽.user navigates to Account Summary Dashboard(file:///Users/adcbkony/Downloads/AutomationFramework_Full/src/test/resources/features/mobileLogin.feature:28)
+Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'MacbookPro', ip: '2001:8f8:1f18:ccbd:c5af:da37:f593:e8b1%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.6.7', java.version: '21.0.7'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {adbExecTimeout: 120000, appActivity: com.adcb.bankSBX.ADCBMIB, appPackage: com.adcb.bankSBX, autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], databaseEnabled: false, desired: {adbExecTimeout: 120000, appActivity: com.adcb.bankSBX.ADCBMIB, appPackage: com.adcb.bankSBX, autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Pixel 9, enableWebviewDetailsCollection: false, ensureWebviewsHavePages: false, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 16, skipLogcatCapture: true, systemPort: 12032, udid: 46241FDAQ00146, uiautomator2ServerLaunchTimeout: 60000, waitForQuiescence: false}, deviceApiLevel: 36, deviceManufacturer: Google, deviceModel: Pixel 9, deviceName: 46241FDAQ00146, deviceScreenDensity: 420, deviceScreenSize: 1080x2424, deviceUDID: 46241FDAQ00146, enableWebviewDetailsCollection: false, ensureWebviewsHavePages: false, headless: false, javascriptEnabled: true, locationContextEnabled: false, mode: cloud, nativeWebScreenshot: true, networkConnectionEnabled: true, newCommandTimeout: 0, orientation: PORTRAIT, pixelRatio: 2.625, platform: ANDROID, platformName: ANDROID, platformVersion: 16, skipLogcatCapture: true, statBarHeight: 173, systemPort: 12032, takesScreenshot: true, udid: 46241FDAQ00146, uiautomator2ServerLaunchTimeout: 60000, viewportRect: {height: 2251, left: 0, top: 173, width: 1080}, waitForQuiescence: false, warnings: {}, webStorageEnabled: false}
+Session ID: dab0b3f7-6e8f-4952-aa50-80d20819b2c9
+*** Element info: {Using=xpath, value=//android.widget.TextView[@text='ACCOUNT SUMMARY']}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at com.mib.android.pages.AccountSummaryPage.getAccountSummaryTitle(AccountSummaryPage.java:37)
+	at com.example.stepdefinitions.MobileSteps.user_navigates_to_account_summary_dashboard(MobileSteps.java:345)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.example.testrunner.CucumberTestNGRunner@1b835480]" started-at="2025-08-23T13:21:51Z" name="tearDownClass" finished-at="2025-08-23T13:21:51Z" duration-ms="37" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

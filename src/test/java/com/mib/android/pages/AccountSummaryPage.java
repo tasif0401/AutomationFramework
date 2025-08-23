@@ -27,7 +27,7 @@ public class AccountSummaryPage {
     
     public AccountSummaryPage(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
-		this.wait = new WebDriverWait(driver, 20);
+		this.wait = new WebDriverWait(driver, 50);
         PageFactory.initElements(driver, this); // Initialize @FindBy elements
 	}
     

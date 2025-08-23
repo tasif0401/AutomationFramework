@@ -16,16 +16,19 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class WebSteps extends BaseTest {
     private LoginPage login;
     private DashboardPage dash;
+    private List<String> stepResults = new ArrayList<>();
 
     @Description("Opens the browser and navigates to the web application using the provided config file.")
     @Step("Open the browser for web with config: {config}")
     @Given("I open the browser for web {string}")
-    public void I_open_the_browser_for_web(String config ) throws Exception {
+    public void i_open_the_browser_for_web(String config ) throws Exception {
         Properties prop = DriverFactory.loadConfig(config);
         BaseTest.initWebDriver(prop);
         login = new LoginPage(webDriver);
@@ -33,6 +36,7 @@ public class WebSteps extends BaseTest {
         AllureReporting.logPass("Browser opened and navigated to baseUrl");
         AllureReporting.attachScreenshot(webDriver, "Navigation Screenshot");
         AllureReporting.setTestCaseName(config);
+        stepResults.add("Opened browser and navigated to baseUrl");
     }
 
     @Description("Logs in to the web application with the given username and password.")
@@ -44,7 +48,7 @@ public class WebSteps extends BaseTest {
         login.clickLogin();
         AllureReporting.logPass("Login performed with username: " + username);
         AllureReporting.attachScreenshot(webDriver, "Login Screenshot");
+        stepResults.add("Login performed with username: " + username);
     }
 
-   
 }

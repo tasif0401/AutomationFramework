@@ -11,7 +11,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+
+import com.example.util.EmailUtil;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -90,6 +95,7 @@ public class BaseTest {
             caps.setCapability("appium:isRealMobile", Boolean.parseBoolean(prop.getProperty("isRealMobile","true")));
             caps.setCapability("appium:app", prop.getProperty("app"));
             caps.setCapability("appium:visual",true);
+            caps.setCapability("privateCloud", prop.getProperty("privateCloud"));
             caps.setCapability("appium:autoGrantPermissions",true);
             caps.setCapability("appium:build", prop.getProperty("build","BDD-Mobile MIB"));
             caps.setCapability("appium:name", prop.getProperty("name","Mobile Test- MIB"));
@@ -105,6 +111,25 @@ public static void quitAll() {
     try { if (webDriver != null) webDriver.quit(); } catch (Exception e){}
     try { if (mobileDriver != null) mobileDriver.quit(); } catch (Exception e){}
 }
-
-
+@AfterSuite
+public static void sendAllureReportEmail() {
+        String allureReportDir = "allure-report"; // corrected path to your Allure report directory
+        String zipFile = "allure-report.zip";
+        try {
+            EmailUtil.zipDirectory(allureReportDir, zipFile);
+            EmailUtil.sendEmailWithAttachment(
+                "smtp.gmail.com", // Gmail SMTP host
+                "587",            // Gmail SMTP port
+                "adcb1adcb1@gmail.com",   // sender email
+                "Quark@2021@",     // sender password (use Gmail app password)
+                "tasif0401@gmail.com", // recipient email
+                "Allure Test Report", // subject
+                "Please find the attached Allure report.", // message
+                zipFile
+            );
+            System.out.println("Allure report email sent successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
