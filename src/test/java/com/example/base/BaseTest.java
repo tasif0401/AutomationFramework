@@ -17,6 +17,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 
 import com.example.util.EmailUtil;
+import com.example.util.GitHubHostnameConfig;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -30,12 +31,21 @@ public class BaseTest {
     
     
     public static void initWebDriver(Properties prop) throws Exception {
+        // Configure GitHub access for WebDriverManager
+        GitHubHostnameConfig.configureGitHubAccess(prop);
+        
         String execution = prop.getProperty("execution","local");
         if (execution.equalsIgnoreCase("local"))
         {
         	 if (webDriver != null) {
         		 webDriver.close();
              }
+            
+            // Test GitHub connectivity before trying to download drivers
+            if (!GitHubHostnameConfig.testGitHubConnectivity(prop)) {
+                System.err.println("[WARNING] GitHub connectivity test failed. WebDriverManager may not be able to download drivers.");
+            }
+            
             WebDriverManager.chromedriver().setup();
             webDriver = new ChromeDriver();
             webDriver.manage().window().maximize();
